@@ -1,17 +1,24 @@
 package init_for_applets;
+import java.awt.Graphics;
 import javax.swing.JApplet;
+import javax.swing.JOptionPane;
 
 public class Main extends JApplet {
 
 	private double sum;
 	
 	public void init(){
-//		https://www.youtube.com/watch?v=Ud9G_AFqTsk
+		String fn = JOptionPane.showInputDialog("Enter first number");
+		String sn = JOptionPane.showInputDialog("Enter second number");
+	
+		double n1 = Double.parseDouble(fn);
+		double n2 = Double.parseDouble(sn);
+		
+		sum = n1 + n2;
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public void paint(Graphics g) {
+		super.paint(g);
+		g.drawString("The sum is "+sum, 25, 30);
 	}
-	
 }
