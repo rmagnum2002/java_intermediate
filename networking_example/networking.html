@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <applet code="Main" width="500" height="230">
+    <param name="title0" value="thenewboston.org">
+    <param name="address0" value="http://thenewboston.org">
+    <param name="title1" value="Google.com">
+    <param name="address1" value="http://google.com">
+  </applet>
+<object id="testapplet-object"
+        classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+        width="500" height="500"
+        codebase="http://java.sun.com/update/1.6.0/jinstall-6u30-windows-i586.cab#Version=1,6,0,0">
+  <param name="archive" value="mytest.jar" />
+  <param name="code" value="Main" />
+  <embed id="testapplet-embed"
+         type="application/x-java-applet;version=1.6"
+         width="500" height="500"
+         archive="mytest.jar"
+         code="my.package.MyClass"
+         pluginspage="http://java.com/download/"
+         myParam="My Param Value" />
+  </embed>
+</object>
+</body>
+</html>

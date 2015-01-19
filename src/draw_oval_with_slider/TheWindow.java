@@ -1,5 +1,6 @@
 package draw_oval_with_slider;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JFrame;
@@ -23,14 +24,15 @@ public class TheWindow extends JFrame {
 		slider.setPaintTicks(true);
 		
 		slider.addChangeListener(
-				new ChangeListener() {					
-					@Override
-					public void stateChanged(ChangeEvent e) {
-						// TODO Auto-generated method stub
-						// https://www.youtube.com/watch?v=X8ffr3UeE8c 2.43
-						
-					}
+			new ChangeListener() {					
+				@Override
+				public void stateChanged(ChangeEvent e) {
+					myPanel.setDiameter(slider.getValue());					
 				}
-		);		
+			}
+		);
+		
+		add(slider, BorderLayout.SOUTH);
+		add(myPanel, BorderLayout.CENTER);
 	}	
 }
