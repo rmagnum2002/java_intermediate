@@ -49,7 +49,7 @@ public class Calculator extends JFrame {
 
 			numberButtons[i].addActionListener(
 				new ActionListener() {
-					
+
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if (screenBar.getText().equals("0")){
