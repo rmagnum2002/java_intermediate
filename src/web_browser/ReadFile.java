@@ -12,20 +12,22 @@ public class ReadFile extends JFrame {
 	
 	//constructor
 	public ReadFile() {
-		super("My browser title");
+		super("NewBrowser");
 		
-		addressBar = new JTextField("Enter a URL");
+		addressBar = new JTextField("");
+		addressBar.requestFocus();
+		addressBar.setFont(new java.awt.Font("Arial", Font.PLAIN, 16));
+		
 		addressBar.addActionListener(
 			new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					loadPage(e.getActionCommand());
 					System.out.println(e.getActionCommand());
+					loadPage(e.getActionCommand());
 				}
 			}
 		);
-		
 		add(addressBar, BorderLayout.NORTH);
 		
 		display = new JEditorPane();
@@ -41,8 +43,9 @@ public class ReadFile extends JFrame {
 				}
 			}
 		);
+		//add(display, BorderLayout.CENTER);
 		
-		add(new JScrollPane(), BorderLayout.CENTER);
+		add(new JScrollPane(display), BorderLayout.CENTER);
 		setSize(500, 300);
 		setVisible(true);
 	}
